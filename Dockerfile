@@ -18,7 +18,7 @@ RUN echo "**** install openssh-server ****" && \
     apt install -y openssh-server
 
 RUN mkdir ~/.ssh
-COPY ssh/authorized_keys /root/.ssh/
+COPY authorized_keys /root/.ssh/
 
 RUN sed -i 's/#PubkeyAuthentication yes/PubkeyAuthentication yes/' /etc/ssh/sshd_config
 RUN sed -i 's/#AuthorizedKeysFile\t.ssh\/authorized_keys .ssh\/authorized_keys2/AuthorizedKeysFile\t.ssh\/authorized_keys/' /etc/ssh/sshd_config
