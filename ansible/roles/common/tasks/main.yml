@@ -1,0 +1,8 @@
+---
+- name: Echo Hello World
+  command: echo ${HOSTNAME}
+  register: echo_result
+
+- name: debug
+  debug:
+    msg: "{{ echo_result }}"
